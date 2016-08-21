@@ -3,18 +3,25 @@ using System.Collections;
 
 public class PlayerMovementController : MonoBehaviour {
 
-	private static Animator anim;
-	private static float speed;
+	public float moveSpeed, rotateSpeed;
 
+	private static Animator anim;
+	private static Rigidbody rb;
 
 	// Use this for initialization
 	void Start () {
 		anim = GetComponent<Animator> ();
+		rb = GetComponent<Rigidbody>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		speed = Input.GetAxis ("Vertical");
-		anim.SetFloat ("speed", speed);
+		//Controls movement animation
+		anim.SetFloat ("speed", Input.GetAxis ("Vertical"));
+
+		//COntrols player movement and rotation
+		rb.AddForce (Input.GetAxisRaw("Vertical") * transform.forward * moveSpeed);
+		transform.RotateAround (transform.position, Vector3.up, Input.GetAxis ("Horizontal") * rotateSpeed);
+
 	}
 }
