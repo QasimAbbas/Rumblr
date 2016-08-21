@@ -1,36 +1,16 @@
 fileFormatVersion: 2
-guid: 2aca3b21ccf248745a7cedc9f2b48f14
-timeCreated: 1461518493
-licenseType: Store
+guid: 9748ac02c29d6844495e87d57e8288b7
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
     100000: //RootNode
-    100002: colosseum
-    100004: colosseum_MeshPart0
-    100006: colosseum_MeshPart1
-    100008: floor
-    100010: wall
     400000: //RootNode
-    400002: colosseum
-    400004: colosseum_MeshPart0
-    400006: colosseum_MeshPart1
-    400008: floor
-    400010: wall
-    2300000: colosseum_MeshPart0
-    2300002: colosseum_MeshPart1
-    2300004: floor
-    2300006: wall
-    3300000: colosseum_MeshPart0
-    3300002: colosseum_MeshPart1
-    3300004: floor
-    3300006: wall
-    4300000: wall
-    4300002: floor
-    4300004: colosseum_MeshPart0
-    4300006: colosseum_MeshPart1
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: Plane
+    9500000: //RootNode
   materials:
-    importMaterials: 1
+    importMaterials: 0
     materialName: 0
     materialSearch: 1
   animations:
@@ -53,7 +33,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 1
+    globalScale: 0.01
     meshCompression: 0
     addColliders: 0
     importBlendShapes: 1
@@ -67,11 +47,11 @@ ModelImporter:
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
-    useFileScale: 1
+    useFileScale: 0
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
-    tangentImportMode: 0
+    tangentImportMode: 4
   importAnimation: 1
   copyAvatar: 0
   humanDescription:
@@ -87,7 +67,7 @@ ModelImporter:
     rootMotionBoneName: 
     hasTranslationDoF: 0
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 0
+  animationType: 2
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
