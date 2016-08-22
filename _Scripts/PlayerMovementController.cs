@@ -3,7 +3,7 @@ using System.Collections;
 
 public class PlayerMovementController : MonoBehaviour {
 
-	public float moveSpeed, rotateSpeed;
+	public float moveSpeed, rotateSpeed, jumpSpeed;
 
 	private static Animator anim;
 	private static Rigidbody rb;
@@ -22,6 +22,10 @@ public class PlayerMovementController : MonoBehaviour {
 		//COntrols player movement and rotation
 		rb.AddForce (Input.GetAxisRaw("Vertical") * transform.forward * moveSpeed);
 		transform.RotateAround (transform.position, Vector3.up, Input.GetAxis ("Horizontal") * rotateSpeed);
+
+		if (Input.GetKeyDown (KeyCode.Space)) {
+			rb.AddForce (Vector3.up * jumpSpeed, ForceMode.Impulse);
+		}
 
 	}
 }
