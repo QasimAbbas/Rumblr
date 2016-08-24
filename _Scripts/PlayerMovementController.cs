@@ -16,16 +16,24 @@ public class PlayerMovementController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		
 		//Controls movement animation
 		anim.SetFloat ("speed", Input.GetAxis ("Vertical"));
 
-		//COntrols player movement and rotation
+		//Controls attacking
+		if (Input.GetMouseButton (0)) {
+			anim.SetBool ("attack", true);
+		} else {
+			anim.SetBool ("attack", false);
+		}
+
+		//Controls player movement and rotation
 		rb.AddForce (Input.GetAxisRaw("Vertical") * transform.forward * moveSpeed);
 		transform.RotateAround (transform.position, Vector3.up, Input.GetAxis ("Horizontal") * rotateSpeed);
 
+		//Controls jumping
 		if (Input.GetKeyDown (KeyCode.Space)) {
 			rb.AddForce (Vector3.up * jumpSpeed, ForceMode.Impulse);
 		}
-
 	}
 }
