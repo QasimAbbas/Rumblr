@@ -39,7 +39,7 @@ public class PlayerMovementController : MonoBehaviour {
 		transform.RotateAround (transform.position, Vector3.up, Input.GetAxis ("Horizontal") * rotateSpeed);
 
 		//Controls jumping movement, if player is not already doing so
-		if (Input.GetKeyDown (KeyCode.Space) && !jumping) {
+		if (Input.GetKey (KeyCode.Space) && !jumping) {
 			jumping = true;
 			rb.AddForce (Vector3.up * jumpSpeed, ForceMode.Impulse);
 		}
