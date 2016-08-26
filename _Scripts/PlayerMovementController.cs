@@ -47,12 +47,12 @@ public class PlayerMovementController : MonoBehaviour {
 
 	//Sets the sword object active for length of current attacking animation being played
 	private IEnumerator SetSwordActive(){
-		GetComponentInChildren<SphereCollider> ().enabled = true;
+		GetComponentInChildren<MeshCollider> ().enabled = true;
 		GetComponentInChildren<TrailRenderer> ().enabled = true;
 
 		yield return new WaitForSeconds (1f);
 
-		GetComponentInChildren<SphereCollider> ().enabled = false;;
+		GetComponentInChildren<MeshCollider> ().enabled = false;;
 		GetComponentInChildren<TrailRenderer> ().enabled = false;
 	}
 
