@@ -3,9 +3,11 @@ using System.Collections;
 
 public class PlayerMovementController : MonoBehaviour {
 
+	//State control variables, and movement constants
 	private float moveSpeed=50f, rotateSpeed=5f, jumpSpeed=20f;
 	private static bool jumping, attacking;
 
+	//Variables for player animation and movement
 	private static Rigidbody rb;
 	private static Animator anim;
 
@@ -23,7 +25,7 @@ public class PlayerMovementController : MonoBehaviour {
 		//Controls movement animation
 		anim.SetFloat ("speed", Input.GetAxis ("Vertical"));
 
-		//Controls attacking, if the sword is active, and the attacking animations
+		//Controls if the sword is active, and the attacking animations
 		if (Input.GetMouseButton (0)) {
 			anim.SetBool ("attack", true);
 			StopAllCoroutines ();
@@ -36,7 +38,7 @@ public class PlayerMovementController : MonoBehaviour {
 		rb.AddForce (Input.GetAxisRaw("Vertical") * transform.forward * moveSpeed);
 		transform.RotateAround (transform.position, Vector3.up, Input.GetAxis ("Horizontal") * rotateSpeed);
 
-		//Controls jumping, if I am not already doing so
+		//Controls jumping movement, if player is not already doing so
 		if (Input.GetKeyDown (KeyCode.Space) && !jumping) {
 			jumping = true;
 			rb.AddForce (Vector3.up * jumpSpeed, ForceMode.Impulse);
