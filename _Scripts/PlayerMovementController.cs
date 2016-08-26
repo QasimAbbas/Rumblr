@@ -4,7 +4,7 @@ using System.Collections;
 public class PlayerMovementController : MonoBehaviour {
 
 	//State control variables, and movement constants
-	private float moveSpeed=50f, rotateSpeed=5f, jumpSpeed=20f;
+	private float moveSpeed=1000f, rotateSpeed=5f, jumpSpeed=300f;
 	private static bool jumping, attacking;
 
 	//Variables for player animation and movement
